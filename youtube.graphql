@@ -13,10 +13,17 @@ type Video {
   videoId: String
   videoTitle: String
   videoThumbnail: String
+  comments: [Comment]
+    @materializer(
+      query: "commentsByVideoId"
+    )
 }
 
-type Videos {
-  videos: [Video]
+type Comment {
+  textDisplay: String
+  authorDisplayName: String
+  likeCount: Int
+  totalReplyCount: Int
 }
 
 type Channel {
@@ -26,6 +33,9 @@ type Channel {
   channelThumbnail: String
   channelTitle: String
   videos: [Video]
+    @materializer(
+      query: "videosByUploadsId"
+    )
 }
 
 type Query {
@@ -34,7 +44,6 @@ type Query {
       steps: [
         { query: "channelIdByQuery" }
         { query: "detailsByChannelId" }
-        { query: "videosByUploadsId" }
         { query: "collect" }
       ]
     )
@@ -75,6 +84,21 @@ type Query {
           path: "title" },
         { field: "videoThumbnail",
           path: "thumbnails.standard.url" }
+      ]
+    )
+  
+  commentsByVideoId(videoId: String!): [Comment]
+    @rest(
+      endpoint: "https://youtube.googleapis.com/youtube/v3/commentThreads?key=$key&videoId=$videoId&part=snippet&order=relevance&maxResults=100" 
+      configuration: "youtube_config"
+      resultroot: "items[].snippet"
+      setters: [
+        { field: "textDisplay",
+          path: "topLevelComment.snippet.textDisplay" },
+        { field: "authorDisplayName",
+          path: "topLevelComment.snippet.authorDisplayName" },
+        { field: "likeCount",
+          path: "topLevelComment.snippet.likeCount" }
       ]
     )
 

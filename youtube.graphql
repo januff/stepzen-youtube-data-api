@@ -9,6 +9,18 @@ type ChannelDetails {
   channelThumbnail: String
 }
 
+type Channel {
+  channelId: String
+  channelDescription: String
+  uploadsId: String
+  channelThumbnail: String
+  channelTitle: String
+  videos: [Video]
+    @materializer(
+      query: "videosByUploadsId"
+    )
+}
+
 type Video {
   videoId: String
   videoTitle: String
@@ -26,17 +38,6 @@ type Comment {
   totalReplyCount: Int
 }
 
-type Channel {
-  channelId: String
-  channelDescription: String
-  uploadsId: String
-  channelThumbnail: String
-  channelTitle: String
-  videos: [Video]
-    @materializer(
-      query: "videosByUploadsId"
-    )
-}
 
 type Query {
   channelByQuery(query: String!): Channel
@@ -72,6 +73,15 @@ type Query {
       ]
     )
 
+  collect(
+    channelId: String!, 
+    channelDescription: String!, 
+    uploadsId: String!,
+    channelThumbnail: String!,
+    channelTitle: String!
+    ): Channel
+      @connector (type: "echo")  
+
   videosByUploadsId(uploadsId: String!): [Video]
     @rest(
       endpoint: "https://youtube.googleapis.com/youtube/v3/playlistItems?key=$key&playlistId=$uploadsId&part=snippet&maxResults=50"
@@ -101,13 +111,4 @@ type Query {
           path: "topLevelComment.snippet.likeCount" }
       ]
     )
-
-  collect(
-    channelId: String!, 
-    channelDescription: String!, 
-    uploadsId: String!,
-    channelThumbnail: String!,
-    channelTitle: String!
-    ): Channel
-      @connector (type: "echo")
 }

@@ -7,6 +7,8 @@ type ChannelDetails {
   channelTitle: String
   channelDescription: String
   channelThumbnail: String
+  viewCount: Int
+  videoCount: Int
 }
 
 type Channel {
@@ -15,6 +17,8 @@ type Channel {
   uploadsId: String
   channelThumbnail: String
   channelTitle: String
+  viewCount: Int
+  videoCount: Int
   videos: [Video]
     @materializer(
       query: "videosByUploadsId"
@@ -51,14 +55,14 @@ type Query {
 
   channelIdByQuery(query: String!): ChannelId
     @rest(
-      endpoint: "https://youtube.googleapis.com/youtube/v3/search?key=$key&part=snippet&order=relevance&type=channel&maxResults=1&q=$query" 
+      endpoint: "https://youtube.googleapis.com/youtube/v3/search?key=$key&q=$query&part=snippet&order=relevance&type=channel&maxResults=1" 
       configuration: "youtube_config"
       resultroot: "items[].id"
     )
 
   detailsByChannelId(channelId: String!): ChannelDetails
     @rest(
-      endpoint: "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=$channelId&key=$key"
+      endpoint: "https://youtube.googleapis.com/youtube/v3/channels?key=$key&id=$channelId&part=snippet%2CcontentDetails%2Cstatistics"
       configuration: "youtube_config"
       resultroot: "items[]"
       setters: [
@@ -69,7 +73,11 @@ type Query {
         { field: "channelDescription",
           path: "snippet.description" },
         { field: "channelThumbnail",
-          path: "snippet.thumbnails.high.url" }
+          path: "snippet.thumbnails.high.url" },
+        { field: "viewCount", 
+          path: "statistics.viewCount" },
+        { field: "videoCount", 
+          path: "statistics.videoCount" }
       ]
     )
 
@@ -78,7 +86,9 @@ type Query {
     channelDescription: String!, 
     uploadsId: String!,
     channelThumbnail: String!,
-    channelTitle: String!
+    channelTitle: String!,
+    viewCount: Int,
+    videoCount: Int
     ): Channel
       @connector (type: "echo")  
 

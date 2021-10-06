@@ -41,13 +41,15 @@ type Query {
 
   channelIdByQuery(query: String!): ChannelId
     @rest(
-      endpoint: "https://youtube.googleapis.com/youtube/v3/search?key=AIzaSyDkj9eV4XNtKwFnrRBZRMzbKbv4nfuOqE4&part=snippet&order=relevance&type=channel&maxResults=1&q=$query" 
+      endpoint: "https://youtube.googleapis.com/youtube/v3/search?key=$key&part=snippet&order=relevance&type=channel&maxResults=1&q=$query" 
+      configuration: "youtube_config"
       resultroot: "items[].id"
     )
 
   detailsByChannelId(channelId: String!): ChannelDetails
     @rest(
-      endpoint: "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=$channelId&key=AIzaSyDkj9eV4XNtKwFnrRBZRMzbKbv4nfuOqE4"
+      endpoint: "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=$channelId&key=$key"
+      configuration: "youtube_config"
       resultroot: "items[]"
       setters: [
         { field: "uploadsId",
@@ -63,8 +65,9 @@ type Query {
 
   videosByUploadsId(uploadsId: String!): [Video]
     @rest(
-      endpoint: "https://youtube.googleapis.com/youtube/v3/playlistItems?key=AIzaSyDkj9eV4XNtKwFnrRBZRMzbKbv4nfuOqE4&playlistId=$uploadsId&part=snippet&maxResults=50"
+      endpoint: "https://youtube.googleapis.com/youtube/v3/playlistItems?key=$key&playlistId=$uploadsId&part=snippet&maxResults=50"
       resultroot: "items[].snippet"
+      configuration: "youtube_config"
       setters: [
         { field: "videoId",
           path: "resourceId.videoId" },

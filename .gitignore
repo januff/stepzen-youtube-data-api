@@ -2,5 +2,5 @@ rickandmorty.graphql
 starwars.graphql
 people.graphql
 article.graphql
-local.env
-config.yaml
+*.env
+*.yaml

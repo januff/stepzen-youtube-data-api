@@ -1,0 +1,86 @@
+type ChannelId {
+  channelId: String
+}
+
+type ChannelDetails {
+  uploadsId: String
+  channelTitle: String
+  channelDescription: String
+  channelThumbnail: String
+}
+
+type Video {
+  videoId: String
+  videoTitle: String
+  videoThumbnail: String
+}
+
+type Videos {
+  videos: [Video]
+}
+
+type Channel {
+  channelId: String
+  channelDescription: String
+  uploadsId: String
+  channelThumbnail: String
+  channelTitle: String
+  videos: [Video]
+}
+
+type Query {
+  channelByQuery(query: String!): Channel
+    @sequence(
+      steps: [
+        { query: "channelIdByQuery" }
+        { query: "detailsByChannelId" }
+        { query: "videosByUploadsId" }
+        { query: "collect" }
+      ]
+    )
+
+  channelIdByQuery(query: String!): ChannelId
+    @rest(
+      endpoint: "https://youtube.googleapis.com/youtube/v3/search?key=AIzaSyDkj9eV4XNtKwFnrRBZRMzbKbv4nfuOqE4&part=snippet&order=relevance&type=channel&maxResults=1&q=$query" 
+      resultroot: "items[].id"
+    )
+
+  detailsByChannelId(channelId: String!): ChannelDetails
+    @rest(
+      endpoint: "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=$channelId&key=AIzaSyDkj9eV4XNtKwFnrRBZRMzbKbv4nfuOqE4"
+      resultroot: "items[]"
+      setters: [
+        { field: "uploadsId",
+          path: "contentDetails.relatedPlaylists.uploads" },
+        { field: "channelTitle",
+          path: "snippet.title" },
+        { field: "channelDescription",
+          path: "snippet.description" },
+        { field: "channelThumbnail",
+          path: "snippet.thumbnails.high.url" }
+      ]
+    )
+
+  videosByUploadsId(uploadsId: String!): [Video]
+    @rest(
+      endpoint: "https://youtube.googleapis.com/youtube/v3/playlistItems?key=AIzaSyDkj9eV4XNtKwFnrRBZRMzbKbv4nfuOqE4&playlistId=$uploadsId&part=snippet&maxResults=50"
+      resultroot: "items[].snippet"
+      setters: [
+        { field: "videoId",
+          path: "resourceId.videoId" },
+        { field: "videoTitle",
+          path: "title" },
+        { field: "videoThumbnail",
+          path: "thumbnails.standard.url" }
+      ]
+    )
+
+  collect(
+    channelId: String!, 
+    channelDescription: String!, 
+    uploadsId: String!,
+    channelThumbnail: String!,
+    channelTitle: String!
+    ): Channel
+      @connector (type: "echo")
+}

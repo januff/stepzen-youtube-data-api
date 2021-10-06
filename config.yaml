@@ -1,4 +1,4 @@
 configurationset:
   - configuration:
       name: youtube_config
-      key: {MY YOUTUBE API KEY}
+      key: {MY-YOUTUBE-API-KEY}

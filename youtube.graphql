@@ -104,7 +104,7 @@ type Query {
   
   commentsByVideoId(videoId: String!): [Comment]
     @rest(
-      endpoint: "https://youtube.googleapis.com/youtube/v3/commentThreads?key=$key&videoId=$videoId&part=snippet&order=relevance&maxResults=100" 
+      endpoint: "https://youtube.googleapis.com/youtube/v3/commentThreads?key=$key&videoId=$videoId&part=snippet&order=relevance&maxResults=1" 
       configuration: "youtube_config"
       resultroot: "items[].snippet"
       setters: [

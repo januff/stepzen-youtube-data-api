@@ -6,8 +6,8 @@ type ChannelDetails {
   channelTitle: String
   channelDescription: String
   channelThumbnail: String
-  viewCount: Int
   videoCount: Int
+  viewCount: Int
 }
 
 type Channel {
@@ -15,8 +15,8 @@ type Channel {
   channelDescription: String
   channelThumbnail: String
   channelTitle: String
-  viewCount: Int
   videoCount: Int
+  viewCount: Int
   videos: [Video]
     @materializer(
       query: "videosByChannelId"

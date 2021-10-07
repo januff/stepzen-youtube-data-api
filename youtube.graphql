@@ -3,7 +3,6 @@ type ChannelId {
 }
 
 type ChannelDetails {
-  uploadsId: String
   channelTitle: String
   channelDescription: String
   channelThumbnail: String
@@ -14,14 +13,13 @@ type ChannelDetails {
 type Channel {
   channelId: String
   channelDescription: String
-  uploadsId: String
   channelThumbnail: String
   channelTitle: String
   viewCount: Int
   videoCount: Int
   videos: [Video]
     @materializer(
-      query: "videosByUploadsId"
+      query: "videosByChannelId"
     )
 }
 
@@ -66,44 +64,41 @@ type Query {
       configuration: "youtube_config"
       resultroot: "items[]"
       setters: [
-        { field: "uploadsId",
-          path: "contentDetails.relatedPlaylists.uploads" },
         { field: "channelTitle",
           path: "snippet.title" },
         { field: "channelDescription",
           path: "snippet.description" },
         { field: "channelThumbnail",
           path: "snippet.thumbnails.high.url" },
-        { field: "viewCount", 
-          path: "statistics.viewCount" },
         { field: "videoCount", 
-          path: "statistics.videoCount" }
+          path: "statistics.videoCount" },
+        { field: "viewCount", 
+          path: "statistics.viewCount" }
       ]
     )
 
   collect(
     channelId: String!, 
-    channelDescription: String!, 
-    uploadsId: String!,
-    channelThumbnail: String!,
     channelTitle: String!,
-    viewCount: Int,
-    videoCount: Int
+    channelDescription: String!, 
+    channelThumbnail: String!,
+    videoCount: Int,
+    viewCount: Int
     ): Channel
       @connector (type: "echo")  
 
-  videosByUploadsId(uploadsId: String!): [Video]
+  videosByChannelId(channelId: String!): [Video]
     @rest(
-      endpoint: "https://youtube.googleapis.com/youtube/v3/playlistItems?key=$key&playlistId=$uploadsId&part=snippet&maxResults=50"
-      resultroot: "items[].snippet"
+      endpoint: "https://youtube.googleapis.com/youtube/v3/search?key=$key&channelId=$channelId&type=video&order=viewCount&part=snippet&maxResults=50"
+      resultroot: "items[]"
       configuration: "youtube_config"
       setters: [
         { field: "videoId",
-          path: "resourceId.videoId" },
+          path: "id.videoId" },
         { field: "videoTitle",
-          path: "title" },
+          path: "snippet.title" },
         { field: "videoThumbnail",
-          path: "thumbnails.standard.url" }
+          path: "snippet.thumbnails.default.url" }
       ]
     )
   

@@ -90,8 +90,8 @@ type Query {
   videosByChannelId(channelId: String!): [Video]
     @rest(
       endpoint: "https://youtube.googleapis.com/youtube/v3/search?key=$key&channelId=$channelId&type=video&order=viewCount&part=snippet&maxResults=50"
-      resultroot: "items[]"
       configuration: "youtube_config"
+      resultroot: "items[]"
       setters: [
         { field: "videoId",
           path: "id.videoId" },

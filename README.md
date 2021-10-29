@@ -44,7 +44,7 @@ Also collecting my cheatsheets here for the moment: StepZen doc pages I relied u
 
 ### My Starter Project Checklist
 
-- [ ] **a type idea** in this case, ```Comments.```
+- [ ] **type ideas** in this case, ```Comment``` and ```Channel.```
 - [ ] **project name** slug-case, for your endpoint URL
 - [ ] **API docs URL** save API explorer pages as Postman 
 - [ ] **API key or token** confirm and save in Postman

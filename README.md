@@ -13,7 +13,7 @@ This repo contains the code referenced in the two StepZen posts below, an explai
 
 - [Step-by-StepZen (Oct 2021)](): **Sorting YouTube Comments, Reddit-Style**
 
-  > When I saw my data reflected back to me like this–not just stripped down but intelligible, virtually readable–I knew I’d stumbled upon a necessary feedback loop, and an indispensable new toolset for API development.
+  > When I saw my data reflected back to me like this–not just sculpted but intelligible, virtually readable–I knew I’d stumbled upon a necessary feedback loop, and an indispensable new toolset for API development.
 
 Also collecting my cheatsheets here for the moment: StepZen doc pages I relied upon heavily, a few beginner questions I've resolved, and my new project checklist. 
 

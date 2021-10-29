@@ -6,12 +6,12 @@
 
 This repo contains the code referenced in the two StepZen posts below, an explainer and a walkthrough:
 
-- [New Workflows For API Mash-Ups (Oct 2021)](https://joeyanuff-33180.medium.com/the-multiverse-next-door-444477bdaf63): **Postman, StepZen & YouTube Data API**
+- [New Workflows For API Mash-Ups (Oct 2021)](): **Postman, StepZen & YouTube Data API**
 
 
   > With my StepZen and Postman workspaces side-by-side, I was able to achieve something remarkable: a localhost and live endpoint serving custom-aggregated YouTube-Data-as-GraphQL, after barely a day-and-a-half of experimentation. 
 
-- [Step-by-StepZen (Oct 2021)](https://joeyanuff-33180.medium.com/the-multiverse-next-door-444477bdaf63): **Sorting YouTube Comments, Reddit-Style**
+- [Step-by-StepZen (Oct 2021)](): **Sorting YouTube Comments, Reddit-Style**
 
   > When I saw my data reflected back to me like this–not just stripped down but intelligible, virtually readable–I knew I’d stumbled upon a necessary feedback loop, and an indispensable new toolchain.
 

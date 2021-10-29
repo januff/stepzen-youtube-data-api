@@ -6,22 +6,24 @@
 
 This repo contains the code referenced in the two StepZen posts below, an explainer and a walkthrough:
 
-- [New Workflows For API Mash-Ups (Oct 2021)](): **Postman, StepZen & YouTube Data API**
+- [New Workflows For API Mash-Ups](): **Postman, StepZen & YouTube Data API**
 
 
   > With my StepZen and Postman workspaces side-by-side, I was able to achieve something remarkable: a localhost and live endpoint serving custom-aggregated YouTube-Data-as-GraphQL, after barely a day-and-a-half of experimentation. 
 
-- [Step-by-StepZen (Oct 2021)](): **Sorting YouTube Comments, Reddit-Style**
+- [Step-by-StepZen](): **Sorting YouTube Comments, Reddit-Style**
 
   > When I saw my data reflected back to me like this–not just sculpted but intelligible, virtually readable–I knew I’d stumbled upon a necessary feedback loop, and an indispensable new toolset for API development.
 
 Also collecting my cheatsheets here for the moment: StepZen doc pages I relied upon heavily, a few beginner questions I've resolved, and my new project checklist. 
 
-### Most Useful StepZen Docs IMO
+### Essential StepZen Docs
 
-- [CONNECTING BACKENDS // How to Connect to a REST Service](https://stepzen.com/docs/connecting-backends/how-to-connect-a-rest-service) This is the most complete single-page StepZen walkthrough at the moment, I think.
+- [Turn Any Data Source into GraphQL](https://www.youtube.com/watch?v=n4Ackk0xMe8) For me, the most eye-opening StepZen demo has been this Learn With Jason livestream, which squeezes in everything thanks to Jason and Carlos's shared Postman chops.
 
-- [DESIGN A GRAPHQL SCHEMA // Create Schema Files by Writing Code](https://stepzen.com/docs/design-a-graphql-schema#create-schema-files-by-writing-code) The 4-point checklist in this section is the most succinct schema starter; minimum requirements before you run ```stepzen start```.
+- [CONNECTING BACKENDS // How to Connect to a REST Service](https://stepzen.com/docs/connecting-backends/how-to-connect-a-rest-service) This is the most complete single-page StepZen walkthrough at the moment, IMO.
+
+<!-- - [DESIGN A GRAPHQL SCHEMA // Create Schema Files by Writing Code](https://stepzen.com/docs/design-a-graphql-schema#create-schema-files-by-writing-code) The 4-point checklist in this section is the most succinct schema starter; minimum requirements before you run ```stepzen start```. -->
 
 - [DESIGN A GRAPHQL SCHEMA // How to Create a Sequence of Queries](https://stepzen.com/docs/design-a-graphql-schema/sequencing-queries) My schema adapts and (slightly) extends this super-followable walkthrough of a multi-part StepZen sequence. I had to remind myself of their debugging advice in the "Testing" section a few times.
 <p align="center">

@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="./images/channelbyQuery-Postman.jpg"/>
-</p>
 
 This repo contains the code referenced in the two StepZen posts below, an explainer and a walkthrough (*upcoming 11/5*):
 
@@ -9,6 +6,9 @@ This repo contains the code referenced in the two StepZen posts below, an explai
 
   > With my StepZen and Postman workspaces side-by-side, I was able to achieve something remarkable: a localhost and live endpoint serving custom-aggregated YouTube-Data-as-GraphQL, after barely a day-and-a-half of experimentation. 
 
+<p align="center">
+  <img src="./images/channelbyQuery-Postman.jpg"/>
+</p>
 
 - Step-by-StepZen: **Sorting YouTube Comments, Reddit-Style** (*upcoming 11/5*)
 

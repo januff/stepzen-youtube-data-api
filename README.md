@@ -1,9 +1,9 @@
 
 
 
-<!-- 
 
-This repo contains the code referenced in the two StepZen posts below, an explainer and a walkthrough: -->
+
+This repo contains the code referenced in the two StepZen posts below, an explainer and a walkthrough:
 
 - [New Workflow For API Mash-Ups](): **Postman, StepZen & YouTube Data API**
 

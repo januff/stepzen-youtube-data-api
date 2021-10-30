@@ -15,7 +15,7 @@ This repo contains the code referenced in the two StepZen posts below, an explai
 
   > When I saw my data reflected back to me like this–not just sculpted but intelligible, virtually readable–I knew I’d stumbled upon a necessary feedback loop, and an important new workflow for API development.
 
-Also collecting my cheatsheets here for the moment: StepZen doc pages I relied upon heavily, a few beginner questions I've resolved, and my new project checklist. 
+<!-- Also collecting my cheatsheets here for the moment: StepZen doc pages I relied upon heavily, a few beginner questions I've resolved, and my new project checklist.  -->
 
 ### Essential StepZen Docs
 
@@ -26,11 +26,11 @@ Also collecting my cheatsheets here for the moment: StepZen doc pages I relied u
 <!-- - [DESIGN A GRAPHQL SCHEMA // Create Schema Files by Writing Code](https://stepzen.com/docs/design-a-graphql-schema#create-schema-files-by-writing-code) The 4-point checklist in this section is the most succinct schema starter; minimum requirements before you run ```stepzen start```. -->
 
 - [DESIGN A GRAPHQL SCHEMA // How to Create a Sequence of Queries](https://stepzen.com/docs/design-a-graphql-schema/sequencing-queries) My schema adapts and (slightly) extends this super-followable walkthrough of a multi-part StepZen sequence. I had to remind myself of their debugging advice in the "Testing" section a few times.
-<p align="center">
+<!-- <p align="center">
   <img width="560" src="./images/channelIdByQuery-Postman.jpg"/>
-</p>
+</p> -->
 
-### My Personal FAQs (and Answers)
+<!-- ### My Personal FAQs (and Answers)
 - **Should I re-use endpoints or create a new one per project?** Not if you want a legible endpoint.
 - **Do I need to login again for a new project?** No, you’re installed and logged in globally.
 - **Where should I install StepZen?**  Doesn’t matter, but I keep my schemas and YAML in a Stepzen folder. Be sure to run `stepzen start` from that folder.
@@ -50,4 +50,4 @@ Also collecting my cheatsheets here for the moment: StepZen doc pages I relied u
 - [ ] **project name** slug-case, for your endpoint URL
 - [ ] **API docs URL** save API explorer pages as Postman 
 - [ ] **API key or token** confirm and save in Postman
-- [ ] **StepZen key** confirm and save in Postman
+- [ ] **StepZen key** confirm and save in Postman -->

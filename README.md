@@ -1,19 +1,23 @@
 
-  <p align="center">
-    <img width="560" src="./images/channelIdByQuery-StepZen.jpg"/>
-  </p>
 
 
-This repo contains the code referenced in the two StepZen posts below, an explainer and a walkthrough:
+<!-- 
 
-- [New Workflows For API Mash-Ups](): **Postman, StepZen & YouTube Data API**
+This repo contains the code referenced in the two StepZen posts below, an explainer and a walkthrough: -->
+
+- [New Workflow For API Mash-Ups](): **Postman, StepZen & YouTube Data API**
 
 
   > With my StepZen and Postman workspaces side-by-side, I was able to achieve something remarkable: a localhost and live endpoint serving custom-aggregated YouTube-Data-as-GraphQL, after barely a day-and-a-half of experimentation. 
 
+
 - [Step-by-StepZen](): **Sorting YouTube Comments, Reddit-Style**
 
   > When I saw my data reflected back to me like this–not just sculpted but intelligible, virtually readable–I knew I’d stumbled upon a necessary feedback loop, and an important new workflow for API development.
+
+  <p align="center">
+    <img width="560" src="./images/channelIdByQuery-StepZen.jpg"/>
+  </p>
 
 <!-- Also collecting my cheatsheets here for the moment: StepZen doc pages I relied upon heavily, a few beginner questions I've resolved, and my new project checklist.  -->
 
@@ -51,3 +55,7 @@ This repo contains the code referenced in the two StepZen posts below, an explai
 - [ ] **API docs URL** save API explorer pages as Postman 
 - [ ] **API key or token** confirm and save in Postman
 - [ ] **StepZen key** confirm and save in Postman -->
+
+  <p align="center">
+    <img width="560" src="./images/channelIdByQuery-Postman.jpg"/>
+  </p>

@@ -23,13 +23,14 @@ This repo contains the code referenced in the two StepZen posts below, an explai
 
 ### Essential StepZen Docs
 
-- [Turn Any Data Source into GraphQL](https://www.youtube.com/watch?v=n4Ackk0xMe8) For me, the most eye-opening StepZen demo has been this Learn With Jason livestream, which squeezes in everything thanks to Jason and Carlos's shared Postman chops.
+- [Turn Any Data Source into GraphQL](https://www.youtube.com/watch?v=n4Ackk0xMe8) For me, the most eye-opening StepZen demo has been this Learn With Jason livestream, which squeezes in a whole lotta demo thanks to Jason and Carlos's shared Postman chops.
 
-- [CONNECTING BACKENDS // How to Connect to a REST Service](https://stepzen.com/docs/connecting-backends/how-to-connect-a-rest-service) This is the most complete single-page StepZen walkthrough at the moment, IMO.
+- [CONNECTING BACKENDS // How to Connect to a REST Service](https://stepzen.com/docs/connecting-backends/how-to-connect-a-rest-service) I'd call this the most concise single-page StepZen walkthrough at the moment.
 
 <!-- - [DESIGN A GRAPHQL SCHEMA // Create Schema Files by Writing Code](https://stepzen.com/docs/design-a-graphql-schema#create-schema-files-by-writing-code) The 4-point checklist in this section is the most succinct schema starter; minimum requirements before you run ```stepzen start```. -->
 
-- [DESIGN A GRAPHQL SCHEMA // How to Create a Sequence of Queries](https://stepzen.com/docs/design-a-graphql-schema/sequencing-queries) My schema adapts and (slightly) extends this super-followable walkthrough of a multi-part StepZen sequence. More than once I had to remind myself of their debugging advice in the "Testing" section: execute each query one-by-one.
+- [DESIGN A GRAPHQL SCHEMA // How to Create a Sequence of Queries](https://stepzen.com/docs/design-a-graphql-schema/sequencing-queries) My schema adapts and (slightly) extends this super-followable build of a multi-part StepZen sequence. More than once I had to remind myself of their debugging advice in the "Testing" section: when a sequence doesn't work, test each query individually.
+
 <!-- <p align="center">
   <img width="560" src="./images/channelIdByQuery-Postman.jpg"/>
 </p> -->

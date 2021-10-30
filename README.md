@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./images/channelByQuery-Postman.jpg"/>
+  <img src="./images/channelbyQuery-Postman.jpg"/>
 </p>
 
 This repo contains the code referenced in the two StepZen posts below, an explainer and a walkthrough (*upcoming 11/5*):

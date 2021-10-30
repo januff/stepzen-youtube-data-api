@@ -1,6 +1,6 @@
 
   <p align="center">
-    <img width="560" src="./images/channelByQuery-StepZen.jpg"/>
+    <img width="560" src="./images/channelIdByQuery-StepZen.jpg"/>
   </p>
 
 
@@ -13,7 +13,7 @@ This repo contains the code referenced in the two StepZen posts below, an explai
 
 - [Step-by-StepZen](): **Sorting YouTube Comments, Reddit-Style**
 
-  > When I saw my data reflected back to me like this–not just sculpted but intelligible, virtually readable–I knew I’d stumbled upon a necessary feedback loop, and an indispensable new toolset for API development.
+  > When I saw my data reflected back to me like this–not just sculpted but intelligible, virtually readable–I knew I’d stumbled upon a necessary feedback loop, and an important new workflow for API development.
 
 Also collecting my cheatsheets here for the moment: StepZen doc pages I relied upon heavily, a few beginner questions I've resolved, and my new project checklist. 
 
@@ -27,7 +27,7 @@ Also collecting my cheatsheets here for the moment: StepZen doc pages I relied u
 
 - [DESIGN A GRAPHQL SCHEMA // How to Create a Sequence of Queries](https://stepzen.com/docs/design-a-graphql-schema/sequencing-queries) My schema adapts and (slightly) extends this super-followable walkthrough of a multi-part StepZen sequence. I had to remind myself of their debugging advice in the "Testing" section a few times.
 <p align="center">
-  <img width="560" src="./images/getIdByQuery-Postman.jpg"/>
+  <img width="560" src="./images/channelIdByQuery-Postman.jpg"/>
 </p>
 
 ### My Personal FAQs (and Answers)

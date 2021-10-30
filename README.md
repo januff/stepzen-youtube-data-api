@@ -10,7 +10,7 @@ This repo contains the code referenced in the two StepZen posts below, an explai
   <img src="./images/channelbyQuery-Postman.jpg"/>
 </p>
 
-- Step-by-StepZen: **Sorting YouTube Comments, Reddit-Style** (*upcoming 11/5*)
+- **Step-by-StepZen: Sorting YouTube Comments, Reddit-Style** (*upcoming 11/5*)
 
   > When I saw my data reflected back to me like this–not just sculpted but intelligible, virtually readable–I knew I’d stumbled upon a necessary feedback loop, and an important new workflow for API development.
 
@@ -28,7 +28,7 @@ This repo contains the code referenced in the two StepZen posts below, an explai
 
 <!-- - [DESIGN A GRAPHQL SCHEMA // Create Schema Files by Writing Code](https://stepzen.com/docs/design-a-graphql-schema#create-schema-files-by-writing-code) The 4-point checklist in this section is the most succinct schema starter; minimum requirements before you run ```stepzen start```. -->
 
-- [DESIGN A GRAPHQL SCHEMA // How to Create a Sequence of Queries](https://stepzen.com/docs/design-a-graphql-schema/sequencing-queries) My schema adapts and (slightly) extends this super-followable build of a multi-part StepZen sequence. More than once I had to remind myself of their debugging advice in the "Testing" section: when a sequence doesn't work, test each query individually.
+- [DESIGN A GRAPHQL SCHEMA // How to Create a Sequence of Queries](https://stepzen.com/docs/design-a-graphql-schema/sequencing-queries) My schema adapts and (slightly) extends this super-followable build of a multi-part StepZen sequence. More than once I had to remind myself of their debugging advice in the "Testing" section: when a sequence doesn't work, *test each query individually*.
 
 <!-- <p align="center">
   <img width="560" src="./images/channelIdByQuery-Postman.jpg"/>

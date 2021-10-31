@@ -1,7 +1,7 @@
 
 This repo contains the code referenced in the two StepZen posts below, an explainer and a schema design walkthrough (*upcoming 11/5*):
 
-- [My New Workflow For API Mash-Ups](): **Postman, StepZen & YouTube Data API**
+- [A New Workflow For API Mash-Ups](): **Postman, StepZen & YouTube Data API**
 
 
   > With my StepZen and Postman workspaces side-by-side, I was able to achieve something remarkable: a localhost and live endpoint serving custom-aggregated YouTube-Data-as-GraphQL, after barely a day-and-a-half of experimentation. 

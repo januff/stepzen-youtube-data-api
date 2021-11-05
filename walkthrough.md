@@ -30,11 +30,23 @@ type ChannelDetails {
 }
 
 type Query {
-  channelIdByQuery(query: String!): ChannelId
+  detailsByChannelId(channelId: String!): ChannelDetails
     @rest(
-      endpoint: "https://youtube.googleapis.com/youtube/v3/search?key=$key&q=$query&part=snippet&order=relevance&type=channel&maxResults=1" 
+      endpoint: "https://youtube.googleapis.com/youtube/v3/channels?key=$key&id=$channelId&part=snippet%2CcontentDetails%2Cstatistics"
       configuration: "youtube_config"
-      resultroot: "items[].id"
+      resultroot: "items[]"
+      setters: [
+        { field: "channelTitle",
+          path: "snippet.title" },
+        { field: "channelDescription",
+          path: "snippet.description" },
+        { field: "channelThumbnail",
+          path: "snippet.thumbnails.high.url" },
+        { field: "videoCount", 
+          path: "statistics.videoCount" },
+        { field: "viewCount", 
+          path: "statistics.viewCount" }
+      ]
     )
 }
 ```
@@ -42,6 +54,19 @@ type Query {
 
 
 ```graphql
+
+type Channel {
+  channelId: String
+  channelDescription: String
+  channelThumbnail: String
+  channelTitle: String
+  videoCount: Int
+  viewCount: Int
+  videos: [Video]
+    @materializer(
+      query: "videosByChannelId"
+    )
+}
 
 type Query {
   channelByQuery(query: String!): Channel

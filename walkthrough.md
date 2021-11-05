@@ -1,4 +1,6 @@
-
+<p align="center">
+  <img src="./images/channelIdbyQuery-Postman.jpg"/>
+</p>
 
 
 ```graphql
@@ -17,6 +19,13 @@ type Query {
 }
 ```
 
+<p align="center">
+  <img src="./images/channelIdbyQuery-StepZen.jpg"/>
+</p>
+
+<p align="center">
+  <img src="./images/detailsByChannelId-Postman.jpg"/>
+</p>
 
 
 ```graphql
@@ -51,6 +60,9 @@ type Query {
 }
 ```
 
+<p align="center">
+  <img src="./images/detailsByChannelId-StepZen.jpg"/>
+</p>
 
 
 ```graphql
@@ -90,6 +102,13 @@ type Query {
 
 ```
 
+<p align="center">
+  <img src="./images/videosByChannelId-Postman.jpg"/>
+</p>
+
+<p align="center">
+  <img src="./images/videosByChannelId-StepZen.jpg"/>
+</p>
 
 
 ```graphql
@@ -124,6 +143,13 @@ type Query {
 
 ```
 
+<p align="center">
+  <img src="./images/commentsByVideoId-Postman.jpg"/>
+</p>
+
+<p align="center">
+  <img src="./images/commentsByVideoId-StepZen.jpg"/>
+</p>
 
 
 ```graphql
@@ -156,3 +182,11 @@ type Query {
 }
 
 ```
+
+<p align="center">
+  <img src="./images/channelByQuery-Postman.jpg"/>
+</p>
+
+<p align="center">
+  <img src="./images/channelByQuery-StepZen.jpg"/>
+</p>

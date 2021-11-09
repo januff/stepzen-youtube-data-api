@@ -33,13 +33,13 @@ type Query {
 ```
 
 <p align="center">
-  <img src="./images/channelIdbyQuery-StepZen.jpg"/>
+  <img src="././images/channelIdbyQuery-StepZen.jpg"/>
 </p>
 
 #### STEP 2: Get Channel Details By Channel ID
 
 <p align="center">
-  <img src="./images/detailsByChannelId-Postman.jpg"/>
+  <img src="././images/detailsByChannelId-Postman.jpg"/>
 </p>
 
 
@@ -76,7 +76,7 @@ type Query {
 ```
 
 <p align="center">
-  <img src="./images/detailsByChannelId-StepZen.jpg"/>
+  <img src="././images/detailsByChannelId-StepZen.jpg"/>
 </p>
 
 
@@ -123,7 +123,7 @@ type Query {
 
 
 <p align="center">
-  <img src="./images/videosByChannelId-Postman.jpg"/>
+  <img src="././images/videosByChannelId-Postman.jpg"/>
 </p>
 
 
@@ -161,13 +161,13 @@ type Query {
 ```
 
 <p align="center">
-  <img src="./images/videosByChannelId-StepZen.jpg"/>
+  <img src="././images/videosByChannelId-StepZen.jpg"/>
 </p>
 
 #### STEP 4: Get Comments By Video ID
 
 <p align="center">
-  <img src="./images/commentsByVideoId-Postman.jpg"/>
+  <img src="././images/commentsByVideoId-Postman.jpg"/>
 </p>
 
 
@@ -204,7 +204,7 @@ type Query {
 ```
 
 <p align="center">
-  <img src="./images/commentsByVideoId-StepZen.jpg"/>
+  <img src="././images/commentsByVideoId-StepZen.jpg"/>
 </p>
 
 
@@ -212,9 +212,9 @@ type Query {
 
 
 <p align="center">
-  <img src="./images/channelByQuery-Postman.jpg"/>
+  <img src="././images/channelByQuery-Postman.jpg"/>
 </p>
 
 <p align="center">
-  <img src="./images/channelByQuery-StepZen.jpg"/>
+  <img src="././images/channelByQuery-StepZen.jpg"/>
 </p>

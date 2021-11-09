@@ -13,9 +13,8 @@ How your initial query triggers follow-up queries in StepZen is up to you: eithe
 #### STEP 1: Get Channel ID By Query
 
 <p align="center">
-  <img src="./images/channelIdbyQuery-Postman.jpg"/>
+  <img src="././images/channelIdbyQuery-Postman.jpg"/>
 </p>
-
 
 ```graphql
 

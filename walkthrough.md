@@ -33,7 +33,7 @@ type Query {
 ```
 
 <p align="center">
-  <img src="././images/channelIdbyQuery-StepZen.jpg"/>
+  <img src="././images/channelIdByQuery-StepZen.jpg"/>
 </p>
 
 #### STEP 2: Get Channel Details By Channel ID

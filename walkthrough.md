@@ -212,7 +212,7 @@ type Query {
 
 
 <p align="center">
-  <img src="././images/channelByQuery-Postman.jpg"/>
+  <img src="././images/channelbyQuery-Postman.jpg"/>
 </p>
 
 <p align="center">

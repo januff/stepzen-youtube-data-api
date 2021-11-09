@@ -1,3 +1,17 @@
+### Step-by-StepZen: Sorting YouTube Comments, Reddit-Style
+
+Converting a 3rd-party REST API to a personal GraphQL API in StepZen, I'm currently approaching as a 3-step process: 
+
+1. using API docs, you find your endpoint. 
+2. using Postman, you test and save that endpoint. 
+3. using StepZen, you link that endpoint to your schema.
+
+Then you repeat–filling in any missing fields or Types of your schema by looking up and adding new endpoints. 
+
+How your initial query triggers follow-up queries in StepZen is up to you: either set up explicit steps with the @sequence directive or auto-fill the fields of your schema with the @materializer directive. In the sequence below I use both methods:
+
+#### STEP 1: Get Channel ID By Query
+
 <p align="center">
   <img src="./images/channelIdbyQuery-Postman.jpg"/>
 </p>
@@ -22,6 +36,8 @@ type Query {
 <p align="center">
   <img src="./images/channelIdbyQuery-StepZen.jpg"/>
 </p>
+
+#### STEP 2: Get Channel Details By Channel ID
 
 <p align="center">
   <img src="./images/detailsByChannelId-Postman.jpg"/>
@@ -65,6 +81,8 @@ type Query {
 </p>
 
 
+#### STEP 2A: Collect Channel Details
+
 ```graphql
 
 type Channel {
@@ -102,13 +120,13 @@ type Query {
 
 ```
 
+#### STEP 3: Get Videos By Channel ID
+
+
 <p align="center">
   <img src="./images/videosByChannelId-Postman.jpg"/>
 </p>
 
-<p align="center">
-  <img src="./images/videosByChannelId-StepZen.jpg"/>
-</p>
 
 
 ```graphql
@@ -144,12 +162,15 @@ type Query {
 ```
 
 <p align="center">
+  <img src="./images/videosByChannelId-StepZen.jpg"/>
+</p>
+
+#### STEP 4: Get Comments By Video ID
+
+<p align="center">
   <img src="./images/commentsByVideoId-Postman.jpg"/>
 </p>
 
-<p align="center">
-  <img src="./images/commentsByVideoId-StepZen.jpg"/>
-</p>
 
 
 ```graphql
@@ -182,6 +203,14 @@ type Query {
 }
 
 ```
+
+<p align="center">
+  <img src="./images/commentsByVideoId-StepZen.jpg"/>
+</p>
+
+
+#### STEPZEN: Get Comments By Channel Query
+
 
 <p align="center">
   <img src="./images/channelByQuery-Postman.jpg"/>

@@ -1,7 +1,7 @@
 
 This repo contains the code referenced in the two StepZen posts below, an explainer and a schema design walkthrough (*upcoming 11/5*):
 
-- [A New Workflow For API Mash-Ups](): **Postman, StepZen & YouTube Data API**
+- **[A New Workflow For API Mash-Ups](https://stepzen.com/blog/new-workflowf-for-api-mash-ups-postman-stepzen-youtube-data-api): Postman, StepZen & YouTube Data API**
 
 
   > With my StepZen and Postman workspaces side-by-side, I was able to achieve something remarkable: a localhost and live endpoint serving custom-aggregated YouTube-Data-as-GraphQL, after barely a day-and-a-half of experimentation. 
@@ -10,7 +10,7 @@ This repo contains the code referenced in the two StepZen posts below, an explai
   <img src="./images/channelbyQuery-Postman.jpg"/>
 </p>
 
-- **Step-by-StepZen: Sorting YouTube Comments, Reddit-Style** (*upcoming 11/5*)
+- **[Step-by-StepZen](./walkthrough.md): Sorting YouTube Comments, Reddit-Style** 
 
   > When I saw my data reflected back to me like this–not just sculpted but intelligible, virtually readable–I knew I’d stumbled upon a necessary feedback loop, and an important new workflow for API development.
 

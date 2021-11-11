@@ -12,7 +12,7 @@ This repo contains the code referenced in the two StepZen posts below, an explai
 
 - **[Step-by-StepZen](./walkthrough.md): Sorting YouTube Comments, Reddit-Style** 
 
-  > When I saw my data reflected back to me like this–not just sculpted but intelligible, virtually readable–I knew I’d stumbled upon a necessary feedback loop, and an important new workflow for API development.
+  > How your initial query triggers follow-up queries in StepZen is up to you: either set up explicit steps with the @sequence directive or auto-fill the fields of your schema with the @materializer directive.
 
   <p align="center">
     <img src="./images/commentsByVideoId-StepZen.jpg"/>

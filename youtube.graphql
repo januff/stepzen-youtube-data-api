@@ -34,6 +34,7 @@ type Video {
 }
 
 type Comment {
+  commentId: String
   textDisplay: String
   authorDisplayName: String
   authorProfileImageUrl: String
@@ -99,7 +100,7 @@ type Query {
         { field: "videoTitle",
           path: "snippet.title" },
         { field: "videoThumbnail",
-          path: "snippet.thumbnails.default.url" }
+          path: "snippet.thumbnails.high.url" }
       ]
     )
   
@@ -109,6 +110,8 @@ type Query {
       configuration: "youtube_config"
       resultroot: "items[].snippet"
       setters: [
+        { field: "commentId",
+          path: "topLevelComment.id" },
         { field: "textDisplay",
           path: "topLevelComment.snippet.textDisplay" },
         { field: "authorDisplayName",

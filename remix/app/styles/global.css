@@ -190,3 +190,14 @@ i {
   font-variant: small-caps;
   font-weight: bold;
 }
+
+.github {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github img {
+  height: 30px;
+}

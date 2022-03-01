@@ -1,5 +1,9 @@
+<p align="center">
+  <img src="./images/chromeView-animated.gif"/>
+</p>
 
-This repo contains the code referenced in the two StepZen posts below, an explainer and a schema design walkthrough:
+
+This repo contains the code referenced in the StepZen posts below, an explainer and a schema design walkthrough:
 
 - **[A New Workflow For API Mash-Ups](https://stepzen.com/blog/new-workflowf-for-api-mash-ups-postman-stepzen-youtube-data-api): Postman, StepZen & YouTube Data API**
 

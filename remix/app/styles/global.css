@@ -1,0 +1,192 @@
+/*
+ * You can just delete everything here or keep whatever you like, it's just a
+ * quick baseline!
+ */
+ :root {
+  --color-foreground: #fff;
+  --color-background: linear-gradient(-75deg, #09203f, #537895);
+  --color-links: hsl(213, 100%, 52%);
+  --color-links-hover: hsl(213, 100%, 43%);
+  --color-border: hsl(0, 0%, 82%);
+  --font-body: -apple-system, "Segoe UI", Helvetica Neue, Helvetica, Roboto,
+    Arial, sans-serif, system-ui, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:-moz-focusring {
+  outline: auto;
+}
+
+:focus {
+  outline: var(--color-links) solid 2px;
+  outline-offset: 2px;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0px;
+  color: var(--color-foreground);
+  background: var(--color-background);
+  height: 100vh;
+  position: fixed;
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 40px;
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-links);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-links-hover);
+  text-decoration: underline;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  background-color: var(--color-border);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+input:where([type="text"]),
+input:where([type="search"]) {
+  display: block;
+  border: 1px solid var(--color-border);
+  width: 100%;
+  font: inherit;
+  line-height: 1;
+  height: calc(1ch + 1.5em);
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  background-color: hsl(0 0% 100% / 20%);
+  color: var(--color-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+main {
+  padding: 1em;
+}
+
+button {
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 1em 1em 2em;
+  padding: .5em;
+  z-index: 100;
+  border: 4px solid var(--color-border);
+  border-radius: 1em;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  column-gap: 1em;
+  row-gap: 1em;
+}
+
+article {
+  border-radius: 1em;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: .6em 1em .4em;
+  background-blend-mode: darken;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--color-border);
+}
+
+header {
+  font-size: .7em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  text-align: left;
+  line-height: 1.25;
+}
+
+article > section {
+  border-radius: 1em;
+  font-size: .8em;
+  padding: .8em;
+  line-height: 1.3;
+  height: 140px;
+  overflow-y: scroll;
+  background:hsla(0, 0%, 82%, 0.2);
+}
+
+footer {
+  font-size: .5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 1em;
+  text-align: right;
+}
+
+.infobox {
+  position: fixed;
+  width: 350px;
+  padding: 0 1em 0 1.3em;
+  top: .5em;
+  left: .5em; 
+  background:hsla(0, 11%, 95%, 0.95);
+  z-index: 100;
+  border: 6px solid black;
+  color: black;
+}
+
+.infobox > h4 {
+  margin-top: -1em;
+  line-height: 1;
+}
+
+h6 {
+  font-size: .6em;
+}
+
+h6 > img {
+  margin-bottom: -2px;
+  height: 12px;
+}
+
+.infobox > p {
+  margin-top: -.5em;
+  line-height: 1.5;
+  font-size: .8em;
+}
+
+i {
+  font-variant: small-caps;
+  font-weight: bold;
+}

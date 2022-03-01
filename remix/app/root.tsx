@@ -8,6 +8,12 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 
+import globalStyles from "~/styles/global.css";
+
+export function links() {
+  return [{ rel: "stylesheet", href: globalStyles }];
+}
+
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
 };

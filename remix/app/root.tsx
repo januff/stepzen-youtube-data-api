@@ -15,7 +15,7 @@ export function links() {
 }
 
 export const meta: MetaFunction = () => {
-  const description = `Layout animations using Remix's Resource Routes and Framer's AnimatePresence component.`;
+  const description = `Building layout animations using Remix's Resource Routes and Framer's AnimatePresence component. YouTube API results built with StepZen.`;
   return {
     description,
     keywords: "Remix,StepZen,YouTube,Framer,AnimatePresence,Resource Routes,Layout Animations",

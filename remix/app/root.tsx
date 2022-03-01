@@ -19,7 +19,7 @@ export const meta: MetaFunction = () => {
   return {
     description,
     keywords: "Remix,jokes",
-    "twitter:image": "https://raw.githubusercontent.com/januff/stepzen-youtube-data-api/main/images/channelbyQuery-Postman.jpg",
+    "twitter:image": "https://raw.githubusercontent.com/januff/stepzen-youtube-data-api/main/images/chromeView.jpg",
     "twitter:card": "summary_large_image",
     "twitter:creator": "@metagurudotguru",
     "twitter:site": "@metagurudotguru",

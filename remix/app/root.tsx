@@ -15,7 +15,7 @@ export function links() {
 }
 
 export const meta: MetaFunction = () => {
-  const description = `Resource Routes in Remix and the AnimatePresence component in Framer.`;
+  const description = `Tweaking layout animations using Remix's Resource Routes and Framer's AnimatePresence component.`;
   return {
     description,
     keywords: "Remix,jokes",

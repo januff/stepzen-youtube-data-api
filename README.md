@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="./images/chromeView.gif"/>
+</p>
+
+
 This repo contains the code referenced in the StepZen posts below, an explainer and a schema design walkthrough:
 
 - **[A New Workflow For API Mash-Ups](https://stepzen.com/blog/new-workflowf-for-api-mash-ups-postman-stepzen-youtube-data-api): Postman, StepZen & YouTube Data API**
@@ -16,6 +21,15 @@ This repo contains the code referenced in the StepZen posts below, an explainer 
   <p align="center">
     <img src="./images/commentsByVideoId-StepZen.jpg"/>
   </p>
+
+
+- **[YouTube Comment Sort](https://stepzen-youtube-data-api.vercel.app/): Animating API Results** 
+
+  > With my YouTube query mocked locally, I was free to follow Dev Ed's recent YouTube tutorial, <a href="https://www.youtube.com/watch?v=nyg5Lpl6AiM">Awesome Filtering Animation with React Tutorial</a>, and get these layout animations working exactly as promised, with no fear of API quotas.
+
+  <p align="center">
+    <img src="./images/chromeView.jpg"/>
+  </p>  
 
 <!-- Also collecting my cheatsheets here for the moment: StepZen doc pages I relied upon heavily, a few beginner questions I've resolved, and my new project checklist.  -->
 

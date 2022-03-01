@@ -18,7 +18,7 @@ export const meta: MetaFunction = () => {
   const description = `Layout animations using Remix's Resource Routes and Framer's AnimatePresence component.`;
   return {
     description,
-    keywords: "Remix,jokes",
+    keywords: "Remix,StepZen,YouTube,Framer,AnimatePresence,Resource Routes,Layout Animations",
     "twitter:image": "https://raw.githubusercontent.com/januff/stepzen-youtube-data-api/main/images/chromeView.jpg",
     "twitter:card": "summary_large_image",
     "twitter:creator": "@metagurudotguru",

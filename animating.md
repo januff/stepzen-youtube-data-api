@@ -188,5 +188,5 @@ export function Comment({ comment, liked }) {
 Winding us up with an endlessly tweakable filter sort, gracefully transitioning a mess of CSS properties right out of the box!
 
 <p align="center">
-  <a target="_blank" href="https://stepzen-youtube-data-api.vercel.app/"><img width="320" src="././images/chromeView-animated.gif"/></a>
+  <a target="_blank" href="https://stepzen-youtube-data-api.vercel.app/"><img width="460" src="././images/chromeView-animated.gif"/></a>
 </p>

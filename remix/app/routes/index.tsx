@@ -16,7 +16,7 @@ export const loader: LoaderFunction = async () => {
   let res = await fetch('https://remix-resource-routes.vercel.app/resource')
 
   let fakeData = await res.json()
-  // console.log('fakeData from loader', fakeData)
+  console.log('fakeData from loader', fakeData)
 
   let commentsArray: any[] = []
   fakeData.data.channelByQuery?.videos.map(video => {

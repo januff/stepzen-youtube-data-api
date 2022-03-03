@@ -1,15 +1,31 @@
 ### Animating API Results (On A Budget)
 
+<p align="center">
+  <a target="_blank" href="https://www.youtube.com/watch?v=nyg5Lpl6AiM"><img width="320" src="././images/chromeView-animated.gif"/></a>
+</p>
+
 #### _Developing layout animations without depleting my API quota, using Remix, Framer, and StepZen._ ####
+
+I was just wrapping up Kent C. Dodd's epic six-hour Remix tutorial when this React animation demo caught my eye:
 
 <p align="center">
   <a target="_blank" href="https://www.youtube.com/watch?v=nyg5Lpl6AiM"><img width="200" src="././images/DevEdVideoThumbnail.jpg"/></a>
 </p>
 
+The last time I'd played with Framer Motion, I'd run into problems with my exit animations during big container swaps–like list changes and route changes–so I was encouraged to see Ed debugging exit animations towards the video's end. 
 
+With the last section of Dodd's mega Remix tutorial fresh in mind, it struck me that a Resource Route would be the perfect place to serve cut-and-pasted API results, safe to endlessly refetch while I reloaded my front-end animations a couple million times.
 
 <p align="center">
-  <a target="_blank" href="https://www.youtube.com/watch?v=nyg5Lpl6AiM"><img width="420" src="././images/vscodeResource.jpg"/></a>
+  <a target="_blank" href="https://www.youtube.com/watch?v=nyg5Lpl6AiM"><img width="540" src="././images/remixResourceRoutes.png"/></a>
+</p>
+
+<p align="center">
+  <a target="_blank" href="https://www.youtube.com/watch?v=nyg5Lpl6AiM"><img width="420" src="././images/cutAndPaste-StepZen.jpg"/></a>
+</p>
+
+<p align="center">
+  <a target="_blank" href="https://www.youtube.com/watch?v=nyg5Lpl6AiM"><img width="420" src="././images/vscodeResource-open.jpg"/></a>
 </p>
 
 <p align="center">
@@ -27,6 +43,42 @@ export const loader: LoaderFunction = async () => {
 
 ```
 
+<p align="center">
+  <a target="_blank" href="https://www.youtube.com/watch?v=nyg5Lpl6AiM"><img width="520" src="././images/consoleFakeData-Remix.jpg"/></a>
+</p>
+
+
+
+```js
+let commentsArray: any[] = []
+fakeData.data.channelByQuery?.videos.map(video => {
+  video.comments.map(comment => {
+    commentsArray.push({
+      ...comment, 
+      videoTitle: video.videoTitle, 
+      videoId: video.videoId, 
+      videoThumbnail: video.videoThumbnail 
+    })
+  })
+})
+// console.log('commentsArray', commentsArray)
+
+let likeSorted = [...commentsArray].sort((a, b) => { 
+  return b.likeCount - a.likeCount
+})
+// console.log('likeSorted', likeSorted)
+
+let replySorted = [...commentsArray].sort((a, b) => { 
+  return b.totalReplyCount - a.totalReplyCount
+})
+
+let mostLiked = likeSorted.slice(0, 100)
+let mostReplied = replySorted.slice(0, 100)
+
+return {mostLiked, mostReplied};
+```
+
+
 
 ```js
 export default function Index() {
@@ -37,7 +89,6 @@ export default function Index() {
 
   ...
 ```
-
 
 ```css
 section {

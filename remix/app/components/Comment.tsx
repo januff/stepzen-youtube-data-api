@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 export function Comment({ comment, liked }) {
   return (
     <motion.article 
+      layout
       whileHover={{
         background: `rgba(0, 0, 0, 0.3) url(${comment.videoThumbnail})`,
         backgroundSize: "cover", 
@@ -15,11 +16,10 @@ export function Comment({ comment, liked }) {
         backgroundSize: "cover", 
         backgroundBlendMode: "multiply",
         backgroundPosition: "center",}}
-      layout
-      transition={{ duration: 0.8 }}
-      animate={{ x: 0, opacity: 1 }}
-      initial={{ x: 800, opacity: 0 }}  
-      exit={{ x: -800, opacity: 0 }}>
+      transition={{ duration: 0.45 }}
+      animate={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, scale: 0.8 }}  
+      exit={{ opacity: 0 }}>
       <header dangerouslySetInnerHTML={{__html: comment.videoTitle }}>
       </header>
       <section>

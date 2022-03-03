@@ -52,8 +52,8 @@ export default function Index() {
   
   useEffect(() => {}, [liked])
 
-  // console.log('mostLiked comments from component', mostLiked)
-  // console.log('mostReplied comments from component', mostReplied)
+  console.log('mostLiked comments from component', mostLiked)
+  console.log('mostReplied comments from component', mostReplied)
 
   return (
     <main>

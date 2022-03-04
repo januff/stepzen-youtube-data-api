@@ -13,7 +13,7 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader: LoaderFunction = async () => {
-  let res = await fetch('https://remix-resource-routes.vercel.app/resource')
+  let res = await fetch('https://stepzen-youtube-data-api.vercel.app/resource')
 
   let fakeData = await res.json()
   console.log('fakeData from loader', fakeData)

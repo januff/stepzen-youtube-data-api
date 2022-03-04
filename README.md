@@ -20,7 +20,7 @@ This repo contains the code referenced in the StepZen posts below: a project exp
 
 - **[YouTube Comment Sort](https://stepzen-youtube-data-api.vercel.app/): Animating API Results** 
 
-  > With my YouTube query mocked locally, I was free to follow Dev Ed's recent YouTube tutorial, <a href="https://www.youtube.com/watch?v=nyg5Lpl6AiM">Awesome Filtering Animation with React Tutorial</a>, and get these layout animations working exactly as promised, with no fear of API quotas.
+  > It's a fairly quota-expensive query, the kind you want to keep as far from your local dev server as possible–especially when you're fiddling with web animations, which often demand endless browser reloads to make presentable. But with my YouTube query mocked in a static Resource Route, duplicating Dev Ed's layout animations in his recent Awesome Filtering Animation with React Tutorial video was a lot less stressful.
 
   <p align="center">
     <img src="./images/chromeView.jpg"/>

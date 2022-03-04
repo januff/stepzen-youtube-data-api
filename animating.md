@@ -2,12 +2,16 @@
 
 #### _Developing layout animations without depleting my API quota, using Remix, Framer, and StepZen._ ####
 
+A perfect combination: Resource Routes in Remix and the <code>AnimatePresence</code> component in Framer. <a target="_blank" href="https://remix.run/docs/en/v1/guides/resource-routes">Resource Routes</a> are arbitrary serverless endpoints, one of which I'm running at <a target="_blank" href="./resource">'./resource'</a> to serve placeholder results for a stepped API query (<a target="_blank" href="https://github.com/januff/stepzen-youtube-data-api/blob/main/walkthrough.md">sequenced using StepZen.</a>) 
+
+It's a fairly quota-expensive query, the kind you want to keep as far from your local dev server as possible–especially when you're fiddling with web animations, which often demand endless browser reloads to make presentable. But with my YouTube query mocked in a static Resource Route, duplicating Dev Ed's layout animations in his recent <a target="_blank" href="https://www.youtube.com/watch?v=nyg5Lpl6AiM">Awesome Filtering Animation with React Tutorial</a> video was a lot less stressful.
+
 
 <p align="center">
   <a target="_blank" href="https://www.youtube.com/watch?v=nyg5Lpl6AiM"><img width="320" src="././images/DevEdVideoThumbnail.jpg"/></a>
 </p>
 
-I was just wrapping up Kent C. Dodd's epic <a href="https://remix.run/docs/en/v1/tutorials/jokes">six-hour Remix tutorial</a> when the React animation demo above showed up in my YouTube feed. The last time I'd played with Framer Motion, I'd run into problems with my exit animations during big container swaps–like list changes and route changes–but I was relieved to see Ed debugging exit animations towards the video's end. 
+I was just wrapping up Kent C. Dodd's epic <a href="https://remix.run/docs/en/v1/tutorials/jokes">six-hour Remix tutorial</a> when Simo Edwin's React animation demo showed up in my YouTube feed. The last time I'd played with Framer Motion, I'd run into problems with my exit animations during big container swaps (like list changes and route changes) but I was relieved to see Ed adroitly handling exit animations towards the video's end. 
 
 <p align="center">
   <a target="_blank" href="https://youtu.be/hsIWJpuxNj0?t=18916"><img width="320" src="././images/doddsResourceRoutes-YouTube.jpg"/></a>
@@ -108,7 +112,53 @@ export default function Index() {
   <a target="_blank" href="https://www.youtube.com/watch?v=nyg5Lpl6AiM"><img width="520" src="././images/consoleSorts-Chrome.jpg"/></a>
 </p>
 
-Now that I had my data, duplicating Dev Ed's layout animation came down to correctly copying in a few crucial elements. Most important of which was starting with a similar grid-template-columns formula:
+Note the requirement of a key prop when rendering lists in React: when I originally chose YouTube API fields when designing my StepZen query, among the values I discarded was anything absolutely identifying I could use as a key. But updating my StepZen schema to include YouTube's original comment ID was notably simple. Referring back to my unabridged API results in Postman, I saw that YouTube includes a comment's id in a few places:
+
+<p align="center">
+  <img width="460" src="././images/YouTubeUnabridged-Postman.jpg"/>
+</p>
+
+Leaving me to make just two changes to my GraphQL file: adding a <code>commentId</code> field to my <code>Comment</code> type, and specifying its path in the setters arguments of my <code>@rest</code>-powered <code>commentsByVideoId</code> query:
+
+```graphql
+...
+
+type Comment {
+  commentId: String
+  textDisplay: String
+  authorDisplayName: String
+  authorProfileImageUrl: String
+  likeCount: Int
+  totalReplyCount: Int
+}
+
+type Query { 
+
+...
+
+  commentsByVideoId(videoId: String!): [Comment]
+    @rest(
+      endpoint: "https://youtube.googleapis.com/youtube/v3/commentThreads?key=$key&videoId=$videoId&part=snippet&order=relevance&maxResults=20" 
+      configuration: "youtube_config"
+      resultroot: "items[].snippet"
+      setters: [
+        { field: "commentId",
+          path: "topLevelComment.id" },
+        { field: "textDisplay",
+          path: "topLevelComment.snippet.textDisplay" },
+        { field: "authorDisplayName",
+          path: "topLevelComment.snippet.authorDisplayName" },
+        { field: "authorProfileImageUrl",
+          path: "topLevelComment.snippet.authorProfileImageUrl" },
+        { field: "likeCount",
+          path: "topLevelComment.snippet.likeCount" }
+      ]
+    )
+}
+
+```
+
+Now that I had my data properly keyed, duplicating Dev Ed's layout animation came down to correctly copying in a few crucial elements. Most important of which was starting with a similar grid-template-columns formula, which has the interesting auto-fit we're animating:
 
 ```css
 section {
@@ -119,7 +169,7 @@ section {
 }
 ```
 
-The trick to getting all phases of your list items' animations firing correctly seems to be <code>layout</code> tags in the <code>motion</code>-tagged container and children, with an imported <code>AnimatePresence</code> wrapping the iterable:
+The trick to getting all phases of your list items' animations firing correctly seems to be including <code>layout</code> tags in the <code>motion</code>-tagged container <i>and</i> children, and an imported <code>AnimatePresence</code> component wrapping the iterable:
 
 
 ```html
@@ -143,7 +193,7 @@ The trick to getting all phases of your list items' animations firing correctly 
 </motion.section>
 ```
 
-And Framer-Motion animations are relegated to my <code>Comment</code> component:
+Item-specific Framer-Motion animation declarations are duly relegated to your item component (in this case <code>Comment</code>):
 
 ```html
 import { motion } from "framer-motion";
@@ -185,8 +235,10 @@ export function Comment({ comment, liked }) {
 }
 ```
 
-Winding us up with an endlessly tweakable filter sort, gracefully transitioning a mess of CSS properties right out of the box!
+Winding us up with an endlessly tweakable list re-order animation, gracefully transitioning a mess of CSS properties out of the box.
 
 <p align="center">
   <a target="_blank" href="https://stepzen-youtube-data-api.vercel.app/"><img width="460" src="././images/chromeView-animated.gif"/></a>
 </p>
+
+Leaving me free, when ready, to swap in my active StepZen endpoint and operate with live API data.

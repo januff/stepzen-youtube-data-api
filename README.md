@@ -1,4 +1,4 @@
-This repo contains the code referenced in the StepZen posts below: a project explainer, a schema design walkthrough, and a front-end view built using Remix and Framer Motion:
+This repo contains the code referenced in the StepZen posts below: a query explainer, a schema design walkthrough, and a front-end view built using Remix and Framer Motion:
 
 - **[A New Workflow For API Mash-Ups](https://stepzen.com/blog/new-workflowf-for-api-mash-ups-postman-stepzen-youtube-data-api): Postman, StepZen & YouTube Data API**
 
@@ -23,7 +23,7 @@ This repo contains the code referenced in the StepZen posts below: a project exp
   > It's a fairly quota-expensive query, the kind you want to keep as far from your local dev server as possible–especially when you're fiddling with web animations, which often demand endless browser reloads to make presentable. But with my YouTube query mocked in a static Resource Route, duplicating Dev Ed's layout animations in his recent Awesome Filtering Animation with React Tutorial video was a lot less stressful.
 
   <p align="center">
-    <img src="./images/chromeView.jpg"/>
+    <img src="./images/chromeView-animated.gif"/>
   </p>  
 
 <!-- Also collecting my cheatsheets here for the moment: StepZen doc pages I relied upon heavily, a few beginner questions I've resolved, and my new project checklist.  -->

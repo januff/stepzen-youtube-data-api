@@ -18,7 +18,7 @@ This repo contains the code referenced in the StepZen posts below: a query expla
   </p>
 
 
-- **[YouTube Comment Sort](https://stepzen-youtube-data-api.vercel.app/): Animating API Results** 
+- **[YouTube Comment Sort](https://stepzen-youtube-data-api.vercel.app/): Animating API Results (On A Budget)** 
 
   > It's a fairly quota-expensive query, the kind you want to keep as far from your local dev server as possible–especially when you're fiddling with web animations, which often demand endless browser reloads to make presentable. But with my YouTube query mocked in a static Resource Route, duplicating Dev Ed's layout animations in his recent Awesome Filtering Animation with React Tutorial video was a lot less stressful.
 
